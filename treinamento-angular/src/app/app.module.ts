@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -7,6 +8,10 @@ import { PainelSimplesComponent } from './painel-simples/painel-simples.componen
 import { BarraNavegacaoComponent } from './barra-navegacao/barra-navegacao.component';
 import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-lateral.component';
 import { ResumoComponent } from './resumo/resumo.component';
+import { ConsultaComponent } from './consulta/consulta.component';
+import { ConsultaPorEspecialidadeComponent } from './consulta/consulta-por-especialidade/consulta-por-especialidade.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ResumoService } from './resumo/resumo.service';
 
 
 @NgModule({
@@ -15,12 +20,16 @@ import { ResumoComponent } from './resumo/resumo.component';
     PainelSimplesComponent,
     BarraNavegacaoComponent,
     MenuLateralComponent,
-    ResumoComponent
+    ResumoComponent,
+    ConsultaComponent,
+    ConsultaPorEspecialidadeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ResumoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
